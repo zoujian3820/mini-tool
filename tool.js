@@ -318,11 +318,14 @@
             var obj = ele ? [ele] : this.elements;
             obj[0] && obj[0].length && (obj = obj[0]);
 
+            console.log(this)
+
             if (typeof obj[0].addEventListener != 'undefined') {
                 for (var i = 0; i < obj.length; i++) {
                     obj[i].addEventListener(type, fn, false);
                 }
             }
+
             return this;
         },
         off: function (type, fn, ele) {
@@ -351,6 +354,13 @@
                 }
                 this.each(function (index, obj) {
                     obj.appendChild(frag);
+                })
+            } else if (text instanceof Tool) {
+                var arr = text.elements[0];
+                this.each(function (index, obj) {
+                    for (var i = 0; i < arr.length; i++) {
+                        obj.appendChild(arr[i]);
+                    }
                 })
             } else {
                 this.each(function (index, obj) {

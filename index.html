@@ -55,7 +55,12 @@
     $('<div>8522</div>').each(function(i,obj){
         console.log(i,obj)
     })
+   var html =  $('<div>click</div>');
 
+    html.on('click',function(){
+        console.log('event click')
+    })
+    $('body').append(html)
 
 </script>
 
