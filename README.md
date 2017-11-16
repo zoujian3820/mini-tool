@@ -44,5 +44,18 @@ js加载异步引用、事件绑定及移除、检测class、添加节点,内容
     $('body').append('<div class="add-element" style="color:red;">js插入的元素</div>')
 
     $('.list .item').text('js填入的内容')
+
+    $('.list .item').each(function(i,obj){
+        console.log(i,obj)
+    })
+
+    $('<div>虚似dom循环</div>').each(function(i,obj){
+        console.log(i,obj)
+    })
+
+    var html =  $('<div class="virtual-dom">触发虚似dom的event事件</div>').on('click',function(){
+        console.log('虚似dom的event事件触发')
+    })
+    $('body').append(html)
 ```
 
