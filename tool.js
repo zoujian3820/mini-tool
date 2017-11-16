@@ -265,7 +265,9 @@
          *重写模似jquery $.each方法
          * */
         each: function (fn, arr) {
-            var obj = arr ? arr : this.elements;
+
+            var obj = arr ? arr : ((this.elements && this.elements.length && this.elements) || this.elements[0])
+
             Array.prototype.forEach.call(obj, function (obj, index) {
                 if (typeof fn === 'function') {
                     fn(index, obj);
@@ -367,8 +369,8 @@
             }
         },
         /*
-        * 获取某一个节点，并且返回Tool对象
-        * */
+         * 获取某一个节点，并且返回Tool对象
+         * */
         eq: function (num) {
             var element = this.elements[num];
             this.elements = [];
