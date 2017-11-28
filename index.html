@@ -7,11 +7,37 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <style>
-        *{margin:0;padding: 0;font-size: 14px;font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';}
-        .event{height: 40px;line-height: 40px;text-align: center;}
-        .item{background: #d8d8d8;height: 40px;line-height: 40px;margin: 5px 0;}
-        .add-element{background: darkseagreen;height: 40px;line-height: 40px;}
-        .virtual-dom{background: gray;height: 40px;line-height: 40px;}
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+        }
+
+        .event {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+
+        .item {
+            background: #d8d8d8;
+            height: 40px;
+            line-height: 40px;
+            margin: 5px 0;
+        }
+
+        .add-element {
+            background: darkseagreen;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .virtual-dom {
+            background: gray;
+            height: 40px;
+            line-height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -49,16 +75,16 @@
 
     $('.list .item').text('js填入的内容')
 
-    $('.list .item').each(function(i,obj){
-        console.log(i,obj)
+    $('.list .item').each(function (i, obj) {
+        console.log(i, obj)
     })
 
-    $('<div>虚似dom循环</div>').each(function(i,obj){
-        console.log(i,obj)
+    $('<div>虚似dom循环</div>').each(function (i, obj) {
+        console.log(i, obj)
     })
-   var html =  $('<div class="virtual-dom">触发虚似dom的event事件</div>').on('click',function(){
-       console.log('虚似dom的event事件触发')
-   })
+    var html = $('<div class="virtual-dom">触发虚似dom的event事件</div>').on('click', function () {
+        console.log('虚似dom的event事件触发')
+    })
 
     $('body').append(html)
 

@@ -505,7 +505,7 @@
                 });
             })
         },
-        /*
+        /**
          * prefixStyle:
          * 能力检测函数
          * style: 'transform'
@@ -532,6 +532,27 @@
             if (vendor === 'standard') return style
             return vendor + sty
         },
+		/** 
+		*判断是否支持某个属性,
+		*以苹果sticky属性为例： ios6.0 + 才支持
+		* too().inAttr('sticky') // true || false
+		*/
+		inAttr: function(attr) {
+			var prefixTestList = ['', '-webkit-', '-ms-', '-moz-', '-o-'];
+			var stickyText = '';
+			for (var i = 0; i < prefixTestList.length; i++ ) {
+				stickyText += 'position:' + prefixTestList[i] + attr;
+			}
+			// 创建一个dom来检查
+			var div = document.createElement('div');
+			var body = document.body;
+			div.style.cssText = 'display:none;' + stickyText;
+			body.appendChild(div);
+			var isSupport = eval('/'+ attr +'/i').test(window.getComputedStyle(div).position);
+			body.removeChild(div);
+			div = null;
+			return isSupport;
+		},
         /**
          * nouislider: 双向滑块 plugin
          * param {
