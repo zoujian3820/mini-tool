@@ -59,3 +59,31 @@ js加载异步引用、事件绑定及移除、检测class、添加节点,内容
     $('body').append(html)
 ```
 
+#### confirm 新增弹窗插件
+```
+/**
+ **** Confirm弹窗插件 confirm.js
+ *  PluginName: ZjsjConfirm
+ *  Author: Mrzou 2018-01-04
+ *  param: {
+ *           title: String,
+ *           text: String,
+ *           confirm: Function
+ *           concel: Function
+ *           animate: 'bottom || top || left || 默认不填则为渐隐'
+ *           type: '1为单按钮，默认双按钮'
+ *       }
+ *  button.addEventListener("click", function () {
+ *       ZjsjConfirm.plugin().setInfo({
+ *           title:"titlePops",
+ *           text: 'yooooo',
+ *           confirm: function () {
+ *               console.log('你点了确定')
+ *           },
+ *           concel: function () {
+ *               console.log('你点了取消')
+ *           }
+ *       })
+ *   })
+ ****/
+```
